@@ -28,7 +28,7 @@ jobs:
         uses: anthropics/claude-code-action@beta
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          model: "claude-opus-4-20250514"  
+          model: "claude-opus-4-20250514"
           timeout_minutes: "60"
           allowed_tools: "Bash(git:*),View,GlobTool,GrepTool,mcp__github__create_pending_pull_request_review,mcp__github__add_pull_request_review_comment_to_pending_review,mcp__github__submit_pending_pull_request_review"
           direct_prompt: |
@@ -84,7 +84,7 @@ jobs:
             • After all comments, call `mcp__github__submit_pending_pull_request_review` with event="COMMENT" and a high-level brief summary in body (include overall quality score, counts, etc.).
 
             Do NOT output raw JSON or markdown. Use the provided MCP tools to leave inline comments directly on the PR.
-          
+
         env:
           ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
